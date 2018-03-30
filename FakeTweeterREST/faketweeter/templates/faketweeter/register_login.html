@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register or login first!</title>
+</head>
+<body>
+
+<h1>Welcome to Faketweeter</h1>
+<h2>Register or login spaceboy!</h2>
+
+<form action="{% url 'faketweeter:register_user' %}" method="post">
+    {% csrf_token %}
+    {{ form_register.as_p }}
+    <button type="submit">Submit</button>
+</form>
+
+<form action="{% url 'faketweeter:login_user' %}" method="post">
+    {% csrf_token %}
+    {{ form_login.as_p }}
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>

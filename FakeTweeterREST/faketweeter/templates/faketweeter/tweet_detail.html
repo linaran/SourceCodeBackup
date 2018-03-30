@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tweet Detail</title>
+</head>
+<body>
+
+<h1>Sweet Details:</h1>
+
+{% if tweet %}
+    <h3>{{ tweet.tweet }}</h3>
+    <p>{{ tweet.date_published }}</p>
+    <a href="{% url 'faketweeter:edit_tweet' tweet.id %}">Edit Tweet</a>
+    <a href="{% url 'faketweeter:delete_tweet' tweet.id %}">Delete</a>
+{% endif %}
+
+{% if show_edit %}
+    <form action="{% url 'faketweeter:edit_tweet' tweet.id %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+{% endif %}
+
+</body>
+</html>

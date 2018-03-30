@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Tweets</title>
+</head>
+<body>
+
+<form action="{% url 'faketweeter:create_tweet' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+
+{% if tweets %}
+    <ul>
+        {% for tweet in tweets %}
+            <li>
+                <a href="{% url 'faketweeter:tweet_detail' tweet.id %}">{{ tweet.tweet }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<a href="{% url 'faketweeter:logout_user' %}">Logout</a>
+
+</body>
+</html>
