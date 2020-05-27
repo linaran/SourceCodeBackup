@@ -5,3 +5,5 @@ This repository is just my backup for various projects I worked on that I don't 
 - ExpertSystem - a lab assignment to implement an expert system. The user basically describe what kind of animal he was thinking of and the expert system would make a good guess.
 - FakeTweeterREST - a lab assignment to implement a bare-bone fake tweeter that would offer a REST service and some basic website.
 - StarTrek - a lab assignment to implement the AStar algorithm. 
+- UnionFind - Came across a lecture from Princeton on how to efficiently implement a union find algorithm. Found it fun and useful to implement
+- FloodFill - A common interview question worth implementing both recursively and non-recursively (touches a lot of data structure etc.)
